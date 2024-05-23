@@ -1,9 +1,11 @@
 extends Area2D
 
 @onready var timer = $Timer
+@onready var sfx = $SFX
 
 func _on_body_entered(body):
 	print("You died")
+	sfx.play()
 	body.velocity.y = -300
 	#Engine.time_scale = 0.5
 	body.get_node("AnimatedSprite2D").flip_v = true
